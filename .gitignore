@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# generated models stay out of git; the preview PNGs in docs/ are committed
+out/
+*.stl
+*.tif

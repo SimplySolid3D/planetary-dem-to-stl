@@ -1,0 +1,10 @@
+# Exact versions this release was tested with (Python 3.14, 16 Oct 2026).
+# The package itself only needs numpy; see pyproject.toml for the ranges.
+numpy==2.5.4
+
+# tests
+pytest==9.1.1
+trimesh==5.1.1
+
+# preview rendering (scripts/render_preview.py)
+matplotlib==3.11.2

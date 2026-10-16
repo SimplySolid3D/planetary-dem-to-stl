@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "planetary-dem-to-stl"
+version = "0.1.0"
+description = "Turn public NASA/USGS Moon and Mars elevation data into watertight, 3D-printable STL terrain blocks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "SimplySolid3D" }]
+keywords = ["moon", "mars", "dem", "stl", "3d-printing", "terrain", "lola", "mola", "heightmap"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "trimesh>=4"]
+preview = ["trimesh>=4", "matplotlib>=3.7"]
+
+[project.scripts]
+planet-stl = "planetary_dem_to_stl.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/SimplySolid3D/planetary-dem-to-stl"
+OrbitStudio = "https://orbitstudio3d.com"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["network: downloads real elevation data (run with --network)"]
